@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+
+option java_multiple_files = true;
+option java_package = "maratmingazor.grpc_common";
+
+service UserService {
+  rpc getUser(GetUserRequest) returns (User) {}
+}
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  string dob = 3;
+  double salary = 4;
+}
+
+message GetUserRequest {
+  int32 id = 1;
+}
+
+message ErrorDetail {
+  // Error code
+  string errorCode = 1;
+  //Error message
+  string message = 2;
+  // Additional metadata associated with the Error
+  map<string, string> metadata = 3;
+}
