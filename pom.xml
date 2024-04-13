@@ -13,12 +13,11 @@
     <groupId>maratmingazovr</groupId>
     <artifactId>grpc-ms</artifactId>
     <version>1.0.0</version>
-    <name>grpc-ms</name>
-    <description>grpc-ms</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>grpc-common</module>
+        <module>grpc_common</module>
+        <module>grpc_client</module>
     </modules>
 
     <properties>
