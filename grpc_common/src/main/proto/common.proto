@@ -2,7 +2,7 @@ syntax = "proto3";
 
 
 option java_multiple_files = true;
-option java_package = "maratmingazor.grpc_common";
+option java_package = "maratmingazovr.grpc_common";
 
 service UserService {
   rpc getUser(GetUserRequest) returns (User) {}
