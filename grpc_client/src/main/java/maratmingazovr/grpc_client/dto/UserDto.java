@@ -1,11 +1,13 @@
 package maratmingazovr.grpc_client.dto;
 
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 //@XmlRootElement(name = "user")
 //@XmlAccessorType(XmlAccessType.FIELD)
 public class UserDto {

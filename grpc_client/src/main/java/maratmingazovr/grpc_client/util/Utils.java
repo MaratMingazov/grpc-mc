@@ -9,10 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Utils {
 
-    @Autowired
-    public Gson gson;
+    private static Gson gson;
 
-    public UserDto convertToDto(User user) {
+    public static UserDto convertToUserDto(User user) {
         return gson.fromJson(gson.toJson(user), UserDto.class);
     }
 
