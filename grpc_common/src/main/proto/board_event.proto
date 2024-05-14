@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "widget.proto";
+import "canvas_event.proto";
+import "comment_event.proto";
+
+option java_multiple_files = true;
+option java_package = "maratmingazovr.grpc_common.board";
+
+message BoardAppEvent {
+  BoardAppEventV1 v1 = 1;
+}
+
+message BoardAppEventV1 {
+  string source = 1;
+  reserved 2 to 10;
+  oneof event {
+    CanvasEvent canvas_event = 11;
+    CommentEvent comment_event = 12;
+  }
+}

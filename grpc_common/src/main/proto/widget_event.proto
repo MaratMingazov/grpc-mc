@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "widget.proto";
+option java_multiple_files = true;
+option java_package = "maratmingazovr.grpc_common";
+
+message WidgetEvent {
+  oneof action {
+    WidgetCreated widget_created = 1;
+    WidgetUpdated widget_updated = 2;
+    WidgetDeleted widget_deleted = 3;
+  }
+}
+
+message WidgetCreated {
+  Widget widget = 1;
+}
+
+message WidgetUpdated {
+  Widget widget = 1;
+}
+
+message WidgetDeleted {
+  string id = 1;
+}

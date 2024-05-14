@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "widget.proto";
+option java_multiple_files = true;
+option java_package = "maratmingazovr.grpc_common";
+
+message CommentEvent {
+  CommentEventV1 v1 = 1;
+}
+
+message CommentEventV1 {
+  string message = 1;
+  reserved 2 to 9;
+
+}

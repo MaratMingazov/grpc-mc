@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "widget.proto";
+import "widget_event.proto";
+option java_multiple_files = true;
+option java_package = "maratmingazovr.grpc_common";
+
+message CanvasEvent {
+  CanvasEventV1 v1 = 1;
+}
+
+message CanvasEventV1 {
+  uint64 canvas_version = 1;
+  reserved 2 to 10;
+  oneof action {
+    WidgetCreated widget_created = 11;
+    WidgetUpdated widget_updated = 12;
+    WidgetDeleted widget_deleted = 13;
+  }
+}
+
+message CanvasEventV2 {
+  uint64 canvas_version = 1;
+  reserved 2 to 10;
+  oneof event_type {
+    WidgetEvent widget_event = 11;
+  }
+}
